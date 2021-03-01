@@ -11,6 +11,14 @@
 # production
 /build
 
+# Leave out lock files
+package-lock.json
+yarn.lock
+
+# Vim temporary files
+*.sw?
+*~
+
 # misc
 .DS_Store
 .env.local
