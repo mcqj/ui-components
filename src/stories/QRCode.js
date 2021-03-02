@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
 import qrCode from 'qrcode';
 
-export function QRCode({ }) {
+export function QRCode() {
   const [inputValue, setInputValue] = useState('');
   const [qrText, setQrText] = useState('');
   const [qrPng, setQrPng] = useState('');
@@ -32,9 +31,14 @@ export function QRCode({ }) {
     <div>
       <h3>QR Encode a String</h3>
       <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='String to Encode' onChange={(e) => handleChange(e)} />
-        <img src={qrPng} />
+        <p>
+          <input type='text' placeholder='String to Encode' onChange={handleChange} />
+        </p>
+        <p>
+          <button type='submit'>Submit</button>
+        </p>
       </form>
+      <img src={qrPng} alt='QR Code'/>
     </div>
   );
 }
